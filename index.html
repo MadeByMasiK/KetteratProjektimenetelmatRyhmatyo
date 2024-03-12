@@ -1,14 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Page Title</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer List</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+</style>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+  <h1>Customer List</h2>
+    <div id="valinta-container">
+        <label for="valinta">Customers per page:</label>
+        <select id="valinta" onchange="perSivu()">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <br>
+
+    <div id="sortingOptions">
+      <button onclick="changeSortingAttribute('id')">Sort by ID</button>
+      <button onclick="changeSortingAttribute('etunimi')">Sort by First Name</button>
+      <button onclick="changeSortingAttribute('sukunimi')">Sort by Surname</button>
+      <button onclick="changeSortingAttribute('email')">Sort by Email</button>
+      <button onclick="changeSortingAttribute('puhelin')">Sort by Phone Number</button>
+      <button onclick="changeSortingAttribute('kaupunki')">Sort by City</button>
+      <button onclick="changeSortingAttribute('maa')">Sort by Country</button>
+      <button onclick="changeSortingAttribute('osoite')">Sort by Address</button>
+
+      <button onclick="changeSortingOrder('asc')">Ascending</button>
+      <button onclick="changeSortingOrder('desc')">Descending</button>
+  </div>
+
+  <br>
+
+  <!-- Search bar -->
+<div id="searchBar">
+  <input type="text" id="searchInput" placeholder="Search...">
+  <button onclick="searchCustomers()">Search</button>
+  <button onclick="resetSearch()">Reset</button>
+</div>
+
+<br>
+
+  <div id="addCustomer">
+    <button onclick="naytaLomake()">Lisää asiakas</button>
+</div>
+<div id="lomake" style="display: none;">
+    <label for="id">Id:</label>
+    <input type="text" id="id" placeholder="Anna id">
+
+    <label for="etunimi">Etunimi:</label>
+    <input type="text" id="etunimi" placeholder="Anna etunimi">
+
+    <label for="sukunimi">Sukunimi:</label>
+    <input type="text" id="sukunimi" placeholder="Anna sukunimi">
+
+    <label for="email">Sähköposti:</label>
+    <input type="email" id="email" placeholder="Anna sähköposti">
+
+    <br>
+
+    <label for="puhelin">Puhelin:</label>
+    <input type="tel" id="puhelin" placeholder="Anna puhelinnumero">
+
+    <label for="kaupunki">Kaupunki:</label>
+    <input type="text" id="kaupunki" placeholder="Anna kaupunki">
+
+    <label for="maa">Maa:</label>
+    <input type="text" id="maa" placeholder="Anna maa">
+
+    <label for="osoite">Osoite:</label>
+    <input type="text" id="osoite" placeholder="Anna osoite">
+
+    <button onclick="handleAddCustomer()">Lisää</button>
+</div>
+
+    <div id="container">
+        
+        <div id="customerList"></div>
+        <div id="pagination"></div>
+    </div>
+    
+
+<script src="scripts.js"></script>
 
 </body>
 </html>
