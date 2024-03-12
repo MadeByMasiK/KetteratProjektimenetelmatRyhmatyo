@@ -21,6 +21,15 @@ h2 {
     font-style: normal;
 }
 
+div {
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 95%
+}
+
 a {
     font-family: "Rubik", sans-serif;
     font-optical-sizing: auto;
@@ -34,4 +43,88 @@ p {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 95%
+}
+
+button {
+    font-family: "Rubik", sans-serif;
+    text-align: center;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 90%;
+    background-color: #949da5;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1%;
+}
+
+#addCustomer {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#lomake{
+    text-align: center;
+}
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#pagination {
+    margin-top: 20px;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.title-row {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.customer-info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.title-row div,
+.customer-info-row div {
+    flex: 1;
+    padding: 5px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
 }
