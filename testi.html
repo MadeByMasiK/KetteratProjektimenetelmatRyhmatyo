@@ -3,36 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JSON Viewer</title>
+<title>Customer List</title>
 <style>
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
+  #container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#pagination {
+    margin-top: 20px;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.page-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.title-row {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.customer-info-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.customer-info-row div {
+    flex: 1;
+    padding: 5px;
+}
 </style>
 </head>
 <body>
+    <div id="valinta-container">
+        <label for="valinta">Customers per page:</label>
+        <select id="valinta" onchange="perSivu()">
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+    <div id="container">
+        <h2>Customer List</h2>
+        <div id="customerList"></div>
+        <div id="pagination"></div>
+    </div>
+    
 
-<h1>JSON Viewer</h1>
-<table id="json-table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Etunimi</th>
-      <th>Sukunimi</th>
-      <th>Email</th>
-      <th>Puhelin</th>
-      <th>Kaupunki</th>
-      <th>Maa</th>
-      <th>Osoite</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+<script src="script.js"></script>
+
 </body>
 </html>
